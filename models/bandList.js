@@ -2,18 +2,12 @@ const Band = require("./band");
 
 class BandList {
   constructor() {
-    this.bands = [
-      new Band("Metallica"),
-      new Band("SOAD"),
-      new Band("Linkin Park"),
-      new Band("Slipknot"),
-    ];
+    this.bands = [new Band("Example")];
   }
 
   addBand(name) {
     const newBand = new Band(name);
     this.bands.push(newBand);
-    return this.bands;
   }
 
   removeBand(id) {

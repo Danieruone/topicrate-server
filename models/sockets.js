@@ -13,6 +13,11 @@ class Sockets {
 
       socket.emit("current-bands", this.bandList.getBands());
 
+      socket.on("create-band", (data) => {
+        this.bandList.addBand(data.name);
+        this.io.emit("current-bands", this.bandList.getBands());
+      });
+
       socket.on("change-band-name", (data) => {
         this.bandList.changeBandName(data.id, data.newName);
         this.io.emit("current-bands", this.bandList.getBands());
